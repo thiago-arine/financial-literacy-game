@@ -1,0 +1,17 @@
+{
+    "start_event": {
+        "text": "Texto1",
+        "options": [
+            {"text": "Opção1", "action": "path_taken"},
+            {"text": "Opção2", "action": "go_back"}
+        ]
+    },
+
+    "forest_event": {
+        "text": "Texto1",
+        "options": [
+            {"text": "Opção1", "action": "path_taken"},
+            {"text": "Opção2", "action": "go_back"}
+        ]
+    }
+}
