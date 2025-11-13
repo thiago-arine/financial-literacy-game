@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://di5k63i56brxc"]
+
+[ext_resource type="Script" uid="uid://dh83xxlvry6xr" path="res://scripts/dialogsystem_script.gd" id="1_32vky"]
+[ext_resource type="FontFile" uid="uid://cdewk8a8mkpc1" path="res://assets/fonts/PixelOperator-Bold.ttf" id="1_rpmmc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32vky"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[node name="DialogueSystem" type="Node2D"]
+script = ExtResource("1_32vky")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -144.0
+offset_top = -28.0
+offset_right = 144.0
+offset_bottom = 28.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_32vky")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = -144.0
+offset_top = -28.0
+offset_right = 144.0
+offset_bottom = 28.0
+
+[node name="SpeakerParent" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(56, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/SpeakerParent"]
+position = Vector2(28, 28)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("1_rpmmc")
+bbcode_enabled = true
+scroll_active = false
+visible_characters_behavior = 1
+
+[node name="ButtonContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+max_polyphony = 1000

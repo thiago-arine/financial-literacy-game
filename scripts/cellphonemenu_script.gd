@@ -16,7 +16,7 @@ func _ready() -> void:
     menu_toggle_button.pressed.connect(toggle_menu)
     
     hide_all_screens()
-    show_screen("Tela_Home")
+    show_screen("Home_Screen")
 
 func toggle_menu() -> void:
     is_menu_open = !is_menu_open
